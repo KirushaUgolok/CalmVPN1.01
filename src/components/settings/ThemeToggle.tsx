@@ -8,25 +8,20 @@ export const ThemeToggle: React.FC<{
   onThemeChange: (theme: 'light' | 'dark' | 'system') => void;
 }> = ({ theme, onThemeChange }) => {
   return (
-    <div className="flex gap-2 p-4 bg-white/50 dark:bg-neutral-800/50 rounded-xl backdrop-blur-sm">
+    <div className="flex gap-2 p-3 bg-white/50 dark:bg-neutral-800/50 rounded-xl backdrop-blur-sm">
       <ThemeButton
-        icon={<Sun size={20} />}
+        icon={<Sun size={25} />}
         label={strings.settings.theme.light}
         active={theme === 'light'}
         onClick={() => onThemeChange('light')}
       />
       <ThemeButton
-        icon={<Moon size={20} />}
+        icon={<Moon size={25} />}
         label={strings.settings.theme.dark}
         active={theme === 'dark'}
         onClick={() => onThemeChange('dark')}
       />
-      <ThemeButton
-        icon={<Monitor size={20} />}
-        label={strings.settings.theme.system}
-        active={theme === 'system'}
-        onClick={() => onThemeChange('system')}
-      />
+     
     </div>
   );
 };
