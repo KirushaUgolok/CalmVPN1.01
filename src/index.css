@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  :root[class~="light"] {
+    --bg-color: #ffffff;
+    --text-color: #171717;
+  }
+
+  :root[class~="dark"] {
+    --bg-color: #171717;
+    --text-color: #ffffff;
+  }
+
+  body {
+    @apply bg-[var(--bg-color)] text-[var(--text-color)] transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .server-select .server-select__control {
+    @apply bg-white dark:bg-neutral-800 border-2 border-neutral-200 dark:border-neutral-700 
+           rounded-xl shadow-lg py-2 px-3 hover:border-amber-500 dark:hover:border-amber-500
+           transition-colors duration-200;
+  }
+
+  .server-select .server-select__menu {
+    @apply bg-white dark:bg-neutral-800 border-2 border-neutral-200 dark:border-neutral-700 
+           rounded-xl overflow-hidden shadow-xl mt-2;
+  }
+
+  .server-select .server-select__option {
+    @apply py-3 px-4 hover:bg-amber-50 dark:hover:bg-amber-900/20 cursor-pointer
+           transition-colors duration-200;
+  }
+
+  .server-select .server-select__single-value {
+    @apply text-neutral-900 dark:text-white font-semibold transition-colors duration-200;
+  }
+
+  .server-select .server-select__placeholder {
+    @apply text-neutral-500 dark:text-neutral-400 font-medium transition-colors duration-200;
+  }
+}
